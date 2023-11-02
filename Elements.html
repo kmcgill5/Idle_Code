@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Idle Code</title>
+        <link rel="icon" type="image/x-icon" href="images/Favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+    <body>
+        <div class="leftpane">
+            <h1>Menu</h1>
+            <ul>
+                <li>
+                    <button type="button" id="home_button">Home</button>
+                </li>
+                <li>
+                    <button type="button" id="info_button">Info</button>
+                </li>
+                <li>
+                    <button type="button" id="achieve_button">Achievements</button>
+                </li>
+                <li>
+                    <button type="button" id="html_button">HTML</button>
+                </li>
+                <li>
+                    <button type="button" id="css_button">CSS</button>
+                </li>
+                <li>
+                    <button type="button" id="js_button">JS</button>
+                </li>
+                <li>
+                    <button type="button" id="python_button">Python</button>
+                </li>
+                <li>
+                    <button type="button" id="java_button">Java</button>
+                </li>
+                <li>
+                    <button type="button" id="batch_button">Batch</button>
+                </li>
+            </ul>
+            <div class="menus">
+                <img id="hKeyboard" alt="" src="images/Keyboard.png">
+                <div id="home">
+                    <h2 id="header">Home</h2>
+                    <p>Characters Typed: <span id="chars">0</span></p>
+                    <p>Files Typed: <span id="files">0</span></p>
+                    <p>Total Money: <span id="tMoney">$0</span></p>
+                </div>
+                <div id="info">
+                    <h2>Information</h2>
+                    <p>Idle code was created to spark an interest in programming.</p>
+                    <p>I am continuing to add programs in different languages. This includes Windows Batch Script. Even though it is not a language, it is a great way to handle tasks and uses commands similar to those used in other languages.</p>
+                    <p>You are encouraged to execute all the code you type and gain a better understanding of each language and its methods.</p>
+                    <p>Many of the HTML, CSS, and JavaScript programs are meant to run together. However, not all of the HTML and JS compliment each other.</p>
+                    <p>I hope you enjoy programming your life away!</p>
+                </div>
+                <div id="achieve">
+                    <h2>Achievements</h2>
+                    <img id="coins" alt="Image of coins." src="">
+                    <p>Make $1,000.</p>
+                    <p>Make $1,000,000</p>
+                    <p>Make $1,000,000,000</p>
+                    <img id="characters" alt="Image of characters." src="">
+                    <p>Type 100 characters</p>
+                    <p>Type 1,000 characters</p>
+                    <p>Type 10,000 characters</p>
+                    <img id="html_code" alt="Image of HTML" src="">
+                    <p>Write an HTML file</p>
+                    <p>Write all the HTML files</p>
+                    <br>
+                    <img id="css_code" alt="Image of CSS" src="">
+                    <p>Write a CSS file</p>
+                    <br>
+                    <br>
+                    <h5>Hidden Components</h5>
+                    <img id="speaker" alt="" src="">
+                    <img id="monitor" alt="" src="">
+                    <img id="tower" alt="" src="">
+                    <p>Monitor</p>
+                    <p>Tower</p>
+                    <p>Keyboard</p>
+                    <img id="keyboard" alt="" src="">
+                    <p>Mouse</p>
+                    <img id="mouse" alt="" src="">
+                    <p>Speaker</p>
+                </div>
+                <div id="html">
+                    <h2>Hypertext Markup Language</h2>
+                    <button type="button" id="browserHTML">Browser</button>
+                    <br>
+                    <button type="button" id="idleHTML">Idle Code</button>
+                </div>
+                <div id="css">
+                    <h2>Cascading Style Sheets</h2>
+                    <button type="button" id="styleCSS">Style</button>
+                </div>
+                <div id="js">
+                    <h2>JavaScript</h2>
+                    <p>Coming Soon!</p>
+                </div>
+                <div id="python">
+                    <h2>Python</h2>
+                    <p>Coming Soon!</p>
+                </div>
+                <div id="java">
+                    <h2>Java</h2>
+                    <p>Coming Soon!</p>
+                </div>
+                <div id="batch">
+                    <h2>Batch Script</h2>
+                    <p>Coming Soon!</p>
+                </div>
+            </div>
+        </div>
+        <div class="middlepane">
+            <div class="head">
+                <div class="money">
+                    <h3>Money</h3>
+                    <h3 id="money">$0</h3>
+                </div>
+                <div class="rank">
+                    <h3 id="skill">Script Kiddie</h3>
+                    <h3>Programmer</h3>
+                </div>
+                <img id="hTower" alt="" src="images/Tower.png">
+            </div>
+            <div>
+                <div class="box">
+                    <label for="box"></label>
+                    <textarea id="box" type="text" title="box" placeholder=" " wrap="off" readonly></textarea>
+                </div>
+                <div class="textbox">
+                    <label for="textbox"></label>
+                    <textarea id="textbox" type="text" title="textbox" placeholder=" " wrap="off" autocorrect="off" autocapitalize="none" spellcheck="false" multiple></textarea>
+                </div>
+            </div>
+            <img id="hMonitor" alt="" src="images/Monitor.png">
+        </div>
+        <div class="rightpane">
+            <h1>Shop</h1>
+            <img id="hSpeaker" alt="" src="images/Speaker.png">
+            <div class="shop">
+                <button type="button" id="programmer">
+                    <span id="pAmount" class="amount">0</span>
+                    <span class="item">Programmer</span>
+                    <span id="pCost" class="cost">$50</span>
+                </button>
+                <button type="button" id="ai">
+                    <span id="aAmount" class="amount">0</span>
+                    <span class="item">AI</span>
+                    <span id="aCost" class="cost">$500</span>
+                </button>
+                <button type="button" id="server">
+                    <span id="sAmount" class="amount">0</span>
+                    <span class="item">Server</span>
+                    <span id="sCost" class="cost">$2,500</span>
+                </button>
+                <button type="button" id="mainframe">
+                    <span id="mAmount" class="amount">0</span>
+                    <span class="item">Mainframe</span>
+                    <span id="mCost" class="cost">$10,000</span>
+                </button>
+                <button type="button" id="super_computer">
+                    <span id="scAmount" class="amount">0</span>
+                    <span class="item">Supercomputer</span>
+                    <span id="scCost" class="cost">$100,000</span>
+                </button>
+                <button type="button" id="quantum_computer">
+                    <span id="qAmount" class="amount">0</span>
+                    <span class="item">Quantum Computer</span>
+                    <span id="qCost" class="cost">$1,000,000</span>
+                </button>
+            </div>
+            <div class="descriptions">
+                <div class="pDescription">
+                    <h4>Programmer</h4>
+                    <p id="pEarn">$5</p>
+                    <p id="pEarning">$0</p>
+                    <br>
+                    <br>
+                    <span>HTML: complete a set of tags</span>
+                    <span>CSS:  complete a heading</span>
+                </div>
+                <div class="aDescription">
+                    <h4>AI</h4>
+                    <p id="aEarn">$20</p>
+                    <p id="aEarning">$0</p>
+                    <br>
+                    <br>
+                    <span>HTML: complete a set of double quotes</span>
+                    <span>CSS:  type any number</span>
+                </div>
+                <div class="sDescription">
+                    <h4>Server</h4>
+                    <p id="sEarn">$100</p>
+                    <p id="sEarning">$0</p>
+                    <br>
+                    <br>
+                    <span>HTML: use the carriage return</span>
+                    <span>CSS: type a colon</span>
+                </div>
+                <div class="mDescription">
+                    <h4>Mainframe</h4>
+                    <p id="mEarn">$250</p>
+                    <p id="mEarning">$0</p>
+                    <br>
+                    <br>
+                    <span>HTML: complete a tag</span>
+                    <span>CSS: use the carriage return</span>
+                </div>
+                <div class="scDescription">
+                    <h4>Supercomputer</h4>
+                    <p id="scEarn">$500</p>
+                    <p id="scEarning">$0</p>
+                    <br>
+                    <br>
+                    <span>Earn money every time you type a character</span>
+                </div>
+                <div class="qDescription">
+                    <h4>Quantum Computer</h4>
+                    <p id="qEarn">$3,000</p>
+                    <p id="qEarning">$0</p>
+                    <br>
+                    <br>
+                    <span>Earn money every second</span>
+                    <img id="hMouse" alt="" src="images/Mouse.png">
+                </div>
+            </div>
+        </div>
+        <script src="JavaScript.js"></script>
+    </body>
+</html>

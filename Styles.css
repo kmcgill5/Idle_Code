@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #ffffff;
+    color: #ffffff;
+    overflow: hidden;
+}
+.leftpane {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 0;
+}
+.middlepane {
+    position: absolute;
+    box-sizing: border-box;
+    left: 30%;
+    width: 40%;
+    height: 100%;
+    background-color: #ffffff;
+    color: #bb00bb;
+    border-left: 13px solid #3a3a3a;
+    border-right: 13px solid #3a3a3a;
+    z-index: 1;
+}
+.rightpane {
+    position: absolute;
+    left: 70%;
+    width: 30%;
+    height: 100%;
+    background-image: url("images/Matrix.gif");
+    z-index: 0;
+}
+h1 {
+    margin-top: 0px;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 50px;
+}
+.leftpane h1 {
+    background-color: #1a1aff;
+}
+ul {
+    position: relative;
+    float: left;
+    left: 5%;
+    margin: 0px;
+    padding: 0px;
+    width: 95%;
+}
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 28%;
+}
+li button {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    background-color: #800080;
+    overflow: hidden;
+}
+li button:hover {
+    background-color: #640164;
+}
+#home, #info, #achieve, #html, #css, #js, #python, #java, #batch { 
+    position: absolute;
+    left: 31.6%;
+    width: 63.4%;
+    height: 79%;
+    background-color: #acac00;
+}
+#info, #achieve, #html, #css, #js, #python, #java, #batch {
+    visibility: hidden;
+}
+#home {
+    visibility: visible;
+}
+#achieve {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#hKeyboard {
+    bottom: 50%;
+    right: 30%;
+}
+img {
+    position: absolute;
+    right: 0%;
+    width: 35%;
+    height: 85px;
+}
+#coins {
+    margin-top: 10px;
+    height: 82.5px;
+}
+#characters {
+    margin-top: -2.5;
+    height: 82.5px;
+}
+#html_code {
+    height: 82.5px;
+}
+#css_code {
+    margin-top: 10px;
+    height: 82.5px;
+}
+h2 {
+    text-align: center;
+    font-size: 28px;
+    padding: 10px 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+}
+p {
+    font-weight: bold;
+    margin: 10px;
+}
+#info p {
+    text-indent: 30px;
+}
+#achieve p {
+    width: 60%;
+}
+#speaker {
+    right: 40%;
+    overflow: hidden;
+}
+#monitor {
+    right: 20%;
+    overflow: hidden;
+    z-index: 1;
+}
+#tower {
+    right: 0%;
+    overflow: hidden;
+}
+#keyboard {
+    right: 25%;
+    overflow: hidden;
+}
+#mouse {
+    right: 5%;
+    width: 15%;
+    height: 7%;
+    overflow: hidden;
+}
+h5 {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    overflow: hidden;
+}
+.menus button {
+    margin: 10px;
+    width: 30%;
+    font-weight: bold;
+    background-color: #00cd00;
+    overflow: hidden;
+}
+#hTower {
+    left: -13px;
+    height: 17px;
+    width: 13px;
+    z-index: 2;
+}
+.middlepane .head {
+    top: 0%;
+    height: 100px;
+    background-color: #bb1919;
+    color: #ffffff;
+}
+.money {
+    position: absolute;
+    text-align: center;
+    left: 0%;
+    width: 30%;
+    overflow: hidden;
+}
+.rank {
+    position: absolute;
+    text-align: center;
+    left: 70%;
+    width: 30%;
+    overflow: hidden;
+}
+.box {
+    margin: auto;
+    height: 82.6%;
+}
+.textbox {
+    margin: auto;
+    height: 82.6%;
+}
+#box, #textbox {
+    position: absolute;
+    padding: 0px;
+    margin-top: 15px;
+    border-width: 3px;
+    box-sizing: border-box;
+    resize: none;
+    font-size: 17px;
+}
+#box {
+    height: 83.4%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+#textbox {
+    height: 83.4%;
+    width: 100%;
+    color: #ff00ff;
+    opacity: 0.5;
+    z-index: 2;
+}
+#hMonitor {
+    bottom: 0%;
+    height: 1%;
+    width: 2%;
+}
+.shop {
+    display: block;
+    margin: auto;
+    width: 70%;
+    min-width: 240px;
+}
+#hSpeaker {
+    top: 6.2%;
+    right: 46.3%;
+    width: 7px;
+    height: 11px;
+}
+.shop button {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0px;
+    background-color: #00ffff;
+}
+.shop button:hover {
+    background-color: #00eeee;
+}
+.shop button span {
+    position: absolute;
+    line-height: 0px;
+}
+.shop .amount {
+    box-sizing: border-box;
+    left: 0%;
+    width: 24%;
+    text-align: left;
+    padding-left: 1%;
+}
+.shop .item {
+    left: 25%;
+    width: 50%;
+    text-align: center;
+}
+.shop .cost {
+    box-sizing: border-box;
+    left: 75%;
+    width: 24%;
+    text-align: right;
+    padding-right: 1%;
+}
+.descriptions {
+    width: 80%;
+    visibility: hidden;
+}
+.pDescription, .aDescription, .sDescription, .mDescription, .scDescription, .qDescription {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    width: 80%;
+    margin: auto;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #bb1919;
+    background-color: #1a1aff;
+    overflow: hidden;
+    visibility: hidden;
+}
+h4 {
+    text-align: center;
+    font-size: 28px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+}
+#pEarn, #aEarn, #sEarn, #mEarn, #scEarn, #qEarn {
+    float: left;
+}
+#pEarning, #aEarning, #sEarning, #mEarning, #scEarning, #qEarning {
+    float: right;
+}
+.descriptions span {
+    display: block;
+    margin: 10px;
+    font-weight: bold;
+}
+#hMouse {
+    width: 30px;
+    height: 30px;
+    bottom: 0%;
+}
