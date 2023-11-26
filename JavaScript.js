@@ -170,6 +170,10 @@ const idleHTML = "<!DOCTYPE HTML>\n" +
            "                    <p>Write a CSS file</p>\n" +
            "                    <br>\n" +
            "                    <br>\n" +
+           "                    <img id=\"js_code\" alt=\"Image of JS\" src=\"\">\n" +
+           "                    <p>Write a JS file</p>\n" +
+           "                    <br>\n" +
+           "                    <br>\n" +
            "                    <h5>Hidden Components</h5>\n" +
            "                    <img id=\"speaker\" alt=\"\" src=\"\">\n" +
            "                    <img id=\"monitor\" alt=\"\" src=\"\">\n" +
@@ -189,11 +193,11 @@ const idleHTML = "<!DOCTYPE HTML>\n" +
            "                </div>\n" +
            "                <div id=\"css\">\n" +
            "                    <h2>Cascading Style Sheets</h2>\n" +
-           "                    <button type=\"button\" id=\"styleCSS\">CSS</button>\n" +
+           "                    <button type=\"button\" id=\"styleCSS\">Style</button>\n" +
            "                </div>\n" +
            "                <div id=\"js\">\n" +
            "                    <h2>JavaScript</h2>\n" +
-           "                    <p>Coming Soon!</p>\n" +
+           "                    <button type=\"button\" id=\"javascriptJS\">JavaScript</button>\n" +
            "                </div>\n" +
            "                <div id=\"python\">\n" +
            "                    <h2>Python</h2>\n" +
@@ -277,6 +281,7 @@ const idleHTML = "<!DOCTYPE HTML>\n" +
            "                    <br>\n" +
            "                    <span>HTML: complete a set of tags</span>\n" +
            "                    <span>CSS:  complete a heading</span>\n" +
+           "                    <span>JS:   complete a header</span>\n" +
            "                </div>\n" +
            "                <div class=\"aDescription\">\n" +
            "                    <h4>AI</h4>\n" +
@@ -286,6 +291,7 @@ const idleHTML = "<!DOCTYPE HTML>\n" +
            "                    <br>\n" +
            "                    <span>HTML: complete a set of double quotes</span>\n" +
            "                    <span>CSS:  type any number</span>\n" +
+           "                    <span>JS:   type a period</span>\n" +
            "                </div>\n" +
            "                <div class=\"sDescription\">\n" +
            "                    <h4>Server</h4>\n" +
@@ -294,7 +300,8 @@ const idleHTML = "<!DOCTYPE HTML>\n" +
            "                    <br>\n" +
            "                    <br>\n" +
            "                    <span>HTML: use the carriage return</span>\n" +
-           "                    <span>CSS: type a colon</span>\n" +
+           "                    <span>CSS:  type a colon</span>\n" +
+           "                    <span>JS:   type any operator</span>\n" +
            "                </div>\n" +
            "                <div class=\"mDescription\">\n" +
            "                    <h4>Mainframe</h4>\n" +
@@ -303,7 +310,8 @@ const idleHTML = "<!DOCTYPE HTML>\n" +
            "                    <br>\n" +
            "                    <br>\n" +
            "                    <span>HTML: complete a tag</span>\n" +
-           "                    <span>CSS: use the carriage return</span>\n" +
+           "                    <span>CSS:  use the carriage return</span>\n" +
+           "                    <span>JS:   type a semi-colon</span>\n" +
            "                </div>\n" +
            "                <div class=\"scDescription\">\n" +
            "                    <h4>Supercomputer</h4>\n" +
@@ -376,6 +384,18 @@ const styleCSS = "body {\n" +
            "td, th {\n" +
            "    padding: 5px;\n" +
            "}";
+//JavaScript
+const javascriptJS = "function increase() {\n" +
+                   "    document.getElementById(\"demo\").style.fontSize = \"35px\";\n" +
+                   "}\n" +
+                   "function decrease() {\n" +
+                   "    document.getElementById(\"demo\").style.fontSize = \"5px\";\n" +
+                   "}\n" +
+                   "let x = \"The rain in SPAIN stays mainly in the plain\";\n" +
+                   "const y = x.matchAll(\"ain\");\n" +
+                   "const z = x.match(/ain/g);\n" +
+                   "document.getElementById(\"test\").innerHTML = Array.from(y);\n" +
+                   "document.getElementById(\"lorem\").innerHTML = `Sing \"${x}\".`;";
 
 /***************************Programming Window***************************/
 //Scroll
@@ -401,10 +421,12 @@ document.getElementById('textbox').addEventListener("input", (e) => { analyze();
 document.getElementById('browserHTML').addEventListener("click", (e) => { open("browser", "html"); resize(); });
 document.getElementById('idleHTML').addEventListener("click", (e) => { open("idle code", "html"); resize(); });
 document.getElementById('styleCSS').addEventListener("click", (e) => { open("style", "css"); resize(); });
+document.getElementById('javascriptJS').addEventListener("click", (e) => { open("javascriptJS", "js"); resize(); });
 //Windows
 let completeBrowser = false;
 let completeIdle = false;
 let completeStyle = false;
+let completeJavascript = false;
 let type = "";
 /*function openHTML() {
     const xml = new XMLHttpRequest();
@@ -426,6 +448,10 @@ function open(file, extension) {
     else if (extension == "css") {
         if (file == "style")
             box.innerHTML = styleCSS;
+    }
+    else if (extension == "js") {
+        if (file == "javascriptJS")
+            box.innerHTML = javascriptJS;
     }
     type = extension;
     textbox.value = "";
@@ -459,6 +485,10 @@ function analyze() {
                     if (box.value == styleCSS)
                         completeStyle = true;
                 }
+                else if (type == "js") {
+                    if (box.value == javascriptJS)
+                        completeJavascript = true;
+                }
                 files++;
             }
         }
@@ -473,20 +503,20 @@ function earn() {
         earnHTML();
     else if (type == "css")
         earnCSS();
+    else if (type == "js")
+        earnJS();
     if (Supercomputer.amount > 0)
         earnings += Supercomputer.amount * Supercomputer.earning;
     updateMoney(money + earnings);
 }
 function earnHTML() {
-    if (Programmer.amount > 0) {
-        if (key == "/")
-            slash = true;
-        else if (slash && key == ">") {
-            slash = false;
-            earnings += Programmer.amount * Programmer.earning;
-        }
+    if (key == "/")
+        slash = true;
+    else if (slash && key == ">") {
+        slash = false;
+        earnings += Programmer.amount * Programmer.earning;
     }
-    if (AI.amount > 0 && key == "\"") {
+    if (key == "\"") {
         if (!quote)
             quote = true;
         else {
@@ -494,25 +524,33 @@ function earnHTML() {
             earnings += AI.amount * AI.earning;
         }
     }
-    if (Server.amount > 0 && key == "Enter")
+    if (key == "Enter")
         earnings += Server.amount * Server.earning;
-    if (Mainframe.amount > 0) {
-        if (key == "<")
-            lessThan = true;
-        else if (lessThan && key == ">") {
-            lessThan = false;
-            earnings += Mainframe.amount * Mainframe.earning;
-        }
+    if (key == "<")
+        lessThan = true;
+    else if (lessThan && key == ">") {
+        lessThan = false;
+        earnings += Mainframe.amount * Mainframe.earning;
     }
 }
 function earnCSS() {
-    if (Programmer.amount > 0 && key == "{")
+    if (key == "{")
         earnings += Programmer.amount * Programmer.earning;
-    if (AI.amount > 0 && ["0","1","2","3","4","5","6","7","8","9"].indexOf(key) != -1)
+    if (["0","1","2","3","4","5","6","7","8","9"].indexOf(key) != -1)
         earnings += AI.amount * AI.earning;
-    if (Server.amount > 0 && key == ":")
+    if (key == ":")
         earnings += Server.amount * Server.earning;
-    if (Mainframe.amount > 0 && key == "Enter")
+    if (key == "Enter")
+        earnings += Mainframe.amount * Mainframe.earning;
+}
+function earnJS() {
+    if (key == "{")
+        earnings += Programmer.amount * Programmer.earning;
+    if (key == ".")
+        earnings += AI.amount * AI.earning;
+    if ([">","<","="].indexOf(key) != -1)
+        earnings += Server.amount * Server.earning;
+    if (key == ";")
         earnings += Mainframe.amount * Mainframe.earning;
 }
 function quantumEarn() {
@@ -645,11 +683,11 @@ function openMenu(name) {
         }
     document.getElementById(name).style.visibility = "visible";
 }
-console.log("Testing...");
+
 /******************************Achievements******************************/
 //Event Listeners
 let achieve = document.getElementById('achieve');
-achieve.addEventListener("scroll", (e) => {achieve.style.overflowY = "scroll"; console.log("Executed.");});
+achieve.addEventListener("scroll", (e) => {achieve.style.overflowY = "scroll";});
 //Achievements
 function checkAchieves() {
     if (tMoney >= 1000000000)
@@ -676,6 +714,8 @@ function checkAchieves() {
         document.getElementById('html_code').src = "images/Gray-html.bmp";
     if (completeStyle)
         document.getElementById('css_code').src = "images/CSS.jpg";
+    if (completeJavascript)
+        document.getElementById('js_code').src = "images/JS.jpg";
 }
 //Hidden Components
 document.getElementById('hSpeaker').addEventListener("click", (e) => {
